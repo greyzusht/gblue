@@ -13,8 +13,16 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
-rpm-ostree install gnome-tweaks
+RUN rpm-ostree install \
+    gnome-tweaks \
+    unrar \
+    aria2 \
+    neofetch \
+    lm_sensors \
+    sstp-client \
+    NetworkManager-sstp \
+    NetworkManager-sstp-gnome \
+    screen
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
@@ -27,6 +35,5 @@ RUN sed -i 's/\.ext/.jxl/' /etc/dconf/db/local.d/01-background && \
     systemctl enable flatpak-replace-fedora-apps.service && \
     systemctl enable flatpak-cleanup.timer && \
     systemctl enable rpm-ostreed-automatic.timer && \
-    systemctl enable podman.socket ; \
-    rpm-ostree cleanup
+    systemctl enable podman.socket
 
