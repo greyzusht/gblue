@@ -48,7 +48,6 @@ rpm-ostree install \
     containerd.io \
     docker-buildx-plugin \
     docker-compose-plugin \
-    docker-compose \
     python3-pip \
     wireguard-tools
 
