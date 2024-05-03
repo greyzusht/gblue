@@ -13,7 +13,7 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-RUN rpm-ostree install \
+rpm-ostree install \
     gnome-tweaks \
     unrar \
     aria2 \
@@ -28,7 +28,7 @@ RUN rpm-ostree install \
 # rpm-ostree install vlc
 
 #### System Settings
-RUN sed -i 's/\.ext/.jxl/' /etc/dconf/db/local.d/01-background && \
+sed -i 's/\.ext/.jxl/' /etc/dconf/db/local.d/01-background && \
     rm -rf /usr/share/gnome-shell/extensions/background-logo@fedorahosted.org && \
     systemctl enable dconf-update.service && \
     systemctl enable flatpak-add-flathub-repo.service && \
