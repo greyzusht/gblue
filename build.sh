@@ -14,10 +14,19 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree install screen
+rpm-ostree install gnome-tweaks
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
-#### Example for enabling a System Unit File
+#### System Settings
+RUN sed -i 's/\.ext/.jxl/' /etc/dconf/db/local.d/01-background && \
+    rm -rf /usr/share/gnome-shell/extensions/background-logo@fedorahosted.org && \
+    systemctl enable dconf-update.service && \
+    systemctl enable flatpak-add-flathub-repo.service && \
+    systemctl enable flatpak-replace-fedora-apps.service && \
+    systemctl enable flatpak-cleanup.timer && \
+    systemctl enable rpm-ostreed-automatic.timer && \
+    systemctl enable podman.socket ; \
+    rpm-ostree cleanup
 
-systemctl enable podman.socket
