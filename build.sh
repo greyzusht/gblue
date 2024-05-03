@@ -25,8 +25,6 @@ rpm-ostree override remove \
 # this installs a package from fedora repos
 rpm-ostree install \
     gcc \
-    glow \
-    gum \
     libxcrypt-compat \
     libimobiledevice \
     make \
@@ -52,8 +50,7 @@ rpm-ostree install \
     docker-compose-plugin \
     docker-compose \
     python3-pip \
-    wireguard-tools \
-    nautilus-open-any-terminal
+    wireguard-tools
 
  
 
