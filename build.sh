@@ -11,7 +11,6 @@ rpm-ostree override remove \
     htop \
     gnome-logs \
     gnome-terminal \
-    gnome-extensions-app \
     toolbox \
     gnome-terminal-nautilus
     
