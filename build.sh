@@ -5,6 +5,18 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 
+# Remove undesired packages
+rpm-ostree override remove \
+    gnome-tour \
+    htop \
+    gnome-logs \
+    gnome-terminal \
+    gnome-extensions-app \
+    toolbox \
+    gnome-terminal-nautilus
+    
+    
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -14,15 +26,38 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree install \
+    gcc \
+    glow \
+    gum \
+    libxcrypt-compat \
+    libimobiledevice \
+    make \
+    mesa-libGLU \
     gnome-tweaks \
     unrar \
+    p7zip \
+    p7zip-plugins \
     aria2 \
-    neofetch \
+    fastfetch \
     lm_sensors \
     sstp-client \
     NetworkManager-sstp \
     NetworkManager-sstp-gnome \
-    screen
+    screen \
+    freetype-freeworld \
+    gnome-console \
+    code \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io \
+    docker-buildx-plugin \
+    docker-compose-plugin \
+    docker-compose \
+    python3-pip \
+    wireguard-tools \
+    nautilus-open-any-terminal
+
+ 
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
