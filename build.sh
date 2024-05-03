@@ -9,7 +9,6 @@ RELEASE="$(rpm -E %fedora)"
 rpm-ostree override remove \
     gnome-tour \
     htop \
-    gnome-logs \
     gnome-terminal \
     toolbox \
     gnome-terminal-nautilus
