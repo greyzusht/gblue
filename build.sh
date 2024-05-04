@@ -48,6 +48,7 @@ rpm-ostree install \
     containerd.io \
     docker-buildx-plugin \
     docker-compose-plugin \
+    docker-compose \
     python3-pip \
     wireguard-tools \
     celluloid
@@ -58,12 +59,7 @@ rpm-ostree install \
 # rpm-ostree install vlc
 
 #### System Settings
-sed -i 's/\.ext/.jxl/' /etc/dconf/db/local.d/01-background && \
-    rm -rf /usr/share/gnome-shell/extensions/background-logo@fedorahosted.org && \
-    systemctl enable dconf-update.service && \
     systemctl enable flatpak-add-flathub-repo.service && \
     systemctl enable flatpak-replace-fedora-apps.service && \
-    systemctl enable flatpak-cleanup.timer && \
-    systemctl enable rpm-ostreed-automatic.timer && \
     systemctl enable podman.socket
 
