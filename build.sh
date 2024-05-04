@@ -11,7 +11,7 @@ rpm-ostree override remove \
     htop \
     gnome-terminal \
     toolbox \
-    gnome-terminal-nautilus
+    gnome-system-monitor
     
     
 
