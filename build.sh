@@ -49,7 +49,8 @@ rpm-ostree install \
     docker-buildx-plugin \
     docker-compose-plugin \
     python3-pip \
-    wireguard-tools
+    wireguard-tools \
+    celluloid
 
  
 
