@@ -11,7 +11,8 @@ rpm-ostree override remove \
     htop \
     gnome-terminal \
     gnome-terminal-nautilus \
-    toolbox
+    toolbox \
+    power-profiles-daemon
     
     
 
@@ -51,7 +52,10 @@ rpm-ostree install \
     docker-compose \
     python3-pip \
     wireguard-tools \
-    celluloid
+    celluloid \
+    tuned \
+    tuned-ppd \
+    tuned-utils
 
  
 
