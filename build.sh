@@ -10,6 +10,7 @@ rpm-ostree override remove \
     gnome-tour \
     htop \
     gnome-terminal \
+    gnome-terminal-nautilus \
     toolbox \
     gnome-system-monitor
     
