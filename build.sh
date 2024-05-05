@@ -7,35 +7,12 @@ RELEASE="$(rpm -E %fedora)"
 
 # Remove undesired packages
 rpm-ostree override remove \
-    xorg-x11-drv-intel \
-    gnome-shell-extension-appindicator \
-    gnome-shell-extension-blur-my-shell \
-    gnome-shell-extension-dash-to-dock \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-logo-menu \
-    gnome-shell-extension-search-light \
-    nautilus-gsconnect \
-    yaru-theme \
-    fish \
-    solaar \
-    tailscale \
-    zsh \
-    cockpit-machines \
-	cockpit-networkmanager \
-	cockpit-ostree \
-	cockpit-pcp \
-	cockpit-podman \
-	cockpit-selinux \
-	cockpit-storaged \
-	cockpit-system \
-    devpod \
-    incus \
-	incus-agent \
-    lxd \
-    lxd-agent \
-    lxc \
-    ubuntu-family-fonts \
-    htop
+    gnome-tour \
+    htop \
+    gnome-terminal \
+    gnome-terminal-nautilus \
+    toolbox \
+    xorg-x11-drv-intel
     
     
 
@@ -48,11 +25,30 @@ rpm-ostree override remove \
 
 # this installs a package from fedora repos
 rpm-ostree install \
+    libxcrypt-compat \
+    gnome-tweaks \
+    unrar \
+    p7zip \
+    p7zip-plugins \
+    aria2 \
+    fastfetch \
+    lm_sensors \
     sstp-client \
     NetworkManager-sstp \
     NetworkManager-sstp-gnome \
     screen \
-    freetype-freeworld
+    freetype-freeworld \
+    gnome-console \
+    code \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io \
+    docker-buildx-plugin \
+    docker-compose-plugin \
+    docker-compose \
+    python3-pip \
+    wireguard-tools \
+    celluloid
 
  
 
@@ -60,7 +56,6 @@ rpm-ostree install \
 # rpm-ostree install vlc
 
 #### System Settings
-    # systemctl enable flatpak-add-flathub-repo.service && \
-    # systemctl enable flatpak-replace-fedora-apps.service && \
+    systemctl enable flatpak-add-flathub-repo.service && \
+    systemctl enable flatpak-replace-fedora-apps.service && \
     systemctl enable podman.socket
-
