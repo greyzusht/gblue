@@ -48,11 +48,12 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-COPY rootfs/ /
+# COPY rootfs/ /
 COPY cosign.pub /etc/pki/containers/
 
 # Patch mutter
-RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:eliasofwaffle:mutter-dynamic-triplebuffer mutter mutter-common
+RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:eliasofwaffle:mutter-dynamic-triplebuffer mutter mutter-common && \
+    ostree container commit
 
 COPY build.sh /tmp/build.sh
 
