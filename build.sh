@@ -6,13 +6,20 @@ RELEASE="$(rpm -E %fedora)"
 
 
 # Remove undesired packages
-# rpm-ostree override remove \
-#     gnome-tour \
+rpm-ostree override remove \
 #     htop \
 #     gnome-terminal \
 #     gnome-terminal-nautilus \
 #     toolbox \
-#     xorg-x11-drv-intel
+    xorg-x11-drv-intel \
+    gnome-shell-extension-appindicator \
+	gnome-shell-extension-blur-my-shell \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-logo-menu \
+	gnome-shell-extension-search-light \
+	nautilus-gsconnect \
+	yaru-theme
     
     
 
