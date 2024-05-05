@@ -52,8 +52,8 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 COPY cosign.pub /etc/pki/containers/
 
 # Patch mutter
-RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:eliasofwaffle:mutter-dynamic-triplebuffer mutter mutter-common && \
-    ostree container commit
+#RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:eliasofwaffle:mutter-dynamic-triplebuffer mutter mutter-common && \
+#   ostree container commit
 
 COPY build.sh /tmp/build.sh
 
