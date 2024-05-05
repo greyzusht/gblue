@@ -1,0 +1,10 @@
+[copr:copr.fedorainfracloud.org:diogotavc:mutter-triple-buffering]
+name=Copr repo for mutter-triple-buffering owned by diogotavc
+baseurl=https://download.copr.fedorainfracloud.org/results/diogotavc/mutter-triple-buffering/fedora-$releasever-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://download.copr.fedorainfracloud.org/results/diogotavc/mutter-triple-buffering/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
