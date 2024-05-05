@@ -15,7 +15,27 @@ rpm-ostree override remove \
     gnome-shell-extension-logo-menu \
     gnome-shell-extension-search-light \
     nautilus-gsconnect \
-    yaru-theme
+    yaru-theme \
+    fish \
+    solaar \
+    tailscale \
+    zsh \
+    cockpit-machines \
+	cockpit-networkmanager \
+	cockpit-ostree \
+	cockpit-pcp \
+	cockpit-podman \
+	cockpit-selinux \
+	cockpit-storaged \
+	cockpit-system \
+    devpod \
+    incus \
+	incus-agent \
+    lxd \
+    lxd-agent \
+    lxc \
+    ubuntu-family-fonts \
+    htop
     
     
 
@@ -27,35 +47,12 @@ rpm-ostree override remove \
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-# rpm-ostree install \
-#     gcc \
-#     libxcrypt-compat \
-#     libimobiledevice \
-#     make \
-#     mesa-libGLU \
-#     gnome-tweaks \
-#     unrar \
-#     p7zip \
-#     p7zip-plugins \
-#     aria2 \
-#     fastfetch \
-#     lm_sensors \
-#     sstp-client \
-#     NetworkManager-sstp \
-#     NetworkManager-sstp-gnome \
-#     screen \
-#     freetype-freeworld \
-#     gnome-console \
-#     code \
-#     docker-ce \
-#     docker-ce-cli \
-#     containerd.io \
-#     docker-buildx-plugin \
-#     docker-compose-plugin \
-#     docker-compose \
-#     python3-pip \
-#     wireguard-tools \
-#     celluloid
+rpm-ostree install \
+    sstp-client \
+    NetworkManager-sstp \
+    NetworkManager-sstp-gnome \
+    screen \
+    freetype-freeworld
 
  
 
