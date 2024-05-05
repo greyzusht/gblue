@@ -15,7 +15,7 @@
 # - "base"
 #
 #  "aurora", "bazzite", "bluefin" or "ucore" may also be used but have different suffixes.
-ARG SOURCE_IMAGE="bluefin"
+ARG SOURCE_IMAGE="silverblue"
 
 ## SOURCE_SUFFIX arg should include a hyphen and the appropriate suffix name
 # These examples all work for silverblue/kinoite/sericea/onyx/lazurite/vauxite/base
@@ -33,10 +33,10 @@ ARG SOURCE_IMAGE="bluefin"
 # - stable-zfs
 # - stable-nvidia-zfs
 # - (and the above with testing rather than stable)
-ARG SOURCE_SUFFIX="-dx-nvidia"
+ARG SOURCE_SUFFIX="-nvidia"
 
 ## SOURCE_TAG arg must be a version built for the specific image: eg, 39, 40, gts, latest
-ARG SOURCE_TAG="latest"
+ARG SOURCE_TAG="39"
 
 
 ### 2. SOURCE IMAGE
@@ -48,12 +48,12 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-# COPY rootfs/ /
+COPY rootfs/ /
 COPY cosign.pub /etc/pki/containers/
 
 # Patch mutter
-#RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:eliasofwaffle:mutter-dynamic-triplebuffer mutter mutter-common && \
-#   ostree container commit
+RUN rpm-ostree override replace --experimental --from repo=copr:copr.fedorainfracloud.org:diogotavc:mutter-triple-buffering mutter && \
+   ostree container commit
 
 COPY build.sh /tmp/build.sh
 
